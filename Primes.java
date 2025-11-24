@@ -1,7 +1,7 @@
 public class Primes {
     public static void main(String[] args) {
         // Replace this statement with your code
-nt maximumPrime = Integer.parseInt(args[0]);
+int maximumPrime = Integer.parseInt(args[0]);
         int primeCount = 0;
 
         System.out.println("Prime numbers up to " + maximumPrime + ":");
