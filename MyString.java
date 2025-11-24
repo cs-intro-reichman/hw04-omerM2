@@ -16,15 +16,58 @@ public class MyString {
         System.out.println(contains("resignation", "sign")); // true
     }
 
+
+    
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
         // Replace the following statement with your code
-        return null;
+       char[] arr = new char[str.length()];
+       for(int i = 0; i < str.length(); i++){
+        char c = str.charAt(i);
+
+        if(c >= 'A' && c<= 'Z'){
+            c = (char) (c + 32 );
+        }
+        arr[i] = c;
+       }
+       return new String(arr);
     }
+        
+
+
+
+        /*
+        
+        i want to create an array that its length is the length of the word
+        i want to put each char in the array.
+        i want to check the range of the current char in the ascii table
+        if the range matches an upper case letter then i need to change the letter to a lowercase letter in the same index.
+
+
+        
+        
+        */
+    
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
         // Replace the following statement with your code
+        String str1Low = lowerCase(str1);
+        String str2Low =lowerCase(str2);
+                for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            boolean match = true;
+
+            for (int j = 0; j < str2.length(); j++) {
+                if (str1.charAt(i + j) != str2.charAt(j)) {
+                    match = false;
+                    break;
+                }
+            }
+
+            if (match) return true;
+        }
+
         return false;
     }
-}
+    }
+    
